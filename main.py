@@ -14,17 +14,4 @@ END_TIME = 10
 #
 # input('Заполните матрицу смежности')
 
-matrix = np.genfromtxt('matrix.csv', delimiter=',', dtype=int)
-if 1 in matrix.diagonal():
-    raise 'Есть петли!'
 
-graph = nx.Graph(matrix)
-for i in range(size):
-    graph.nodes[i]['condition'] = 0
-    graph.nodes[i]['annoyed'] = False
-
-colo_map = assign_colors(graph)
-show(graph, colo_map)
-
-for _ in range(END_TIME):
-    disturb_cells
