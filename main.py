@@ -1,7 +1,3 @@
-import networkx as nx
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 from automaton import *
 
 size = 6
@@ -14,4 +10,13 @@ END_TIME = 10
 #
 # input('Заполните матрицу смежности')
 
+matrix = np.genfromtxt('matrix.csv', delimiter=',', dtype=int)
+G = Automaton(matrix, size, n)
 
+G.process()
+G.process()
+G.process('1 1')
+G.process()
+G.process()
+G.process()
+G.process()
